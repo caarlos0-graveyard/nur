@@ -3,19 +3,19 @@
 { system ? builtins.currentSystem, pkgs, lib, fetchurl, installShellFiles }:
 let
   shaMap = {
-    i686-linux = "0clmdzxw0kvv0xnza198xg1lmzz0061j6y173018gqgwqhx6cfim";
-    x86_64-linux = "1vh4qfrv6wx9wkchh8q1jncag8pvilwpsb1cfm4qvraqrwgwn461";
-    x86_64-darwin = "0ddcipvm4jn254rrhavq0z1dbqkn606awy3sky9ic34b3f124y8x";
+    i686-linux = "03djgg7z0a7qgr2ghb5l1jki28q03356r80mhqi3r109hx35b4cg";
+    x86_64-linux = "1a2ibzym0hcnyacp7g1cy5d92li4i4vbfha7nhndfr55h39dradv";
+    x86_64-darwin = "085fzmqrkz9qbh1wp3lv9742r6ca5i6zsgv1v8d9dma72456a77x";
   };
 
   urlMap = {
-    i686-linux = "https://github.com/caarlos0-graveyard/test/releases/download/v1.0.25/foo_1.0.25_linux_386.zip";
-    x86_64-linux = "https://github.com/caarlos0-graveyard/test/releases/download/v1.0.25/foo_1.0.25_linux_amd64.zip";
-    x86_64-darwin = "https://github.com/caarlos0-graveyard/test/releases/download/v1.0.25/foo_1.0.25_darwin_amd64.zip";
+    i686-linux = "https://github.com/caarlos0-graveyard/test/releases/download/v1.0.26/foo_1.0.26_linux_386.zip";
+    x86_64-linux = "https://github.com/caarlos0-graveyard/test/releases/download/v1.0.26/foo_1.0.26_linux_amd64.zip";
+    x86_64-darwin = "https://github.com/caarlos0-graveyard/test/releases/download/v1.0.26/foo_1.0.26_darwin_amd64.zip";
   };
 in pkgs.stdenv.mkDerivation {
   pname = "test";
-  version = "1.0.25";
+  version = "1.0.26";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
